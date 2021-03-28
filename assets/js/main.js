@@ -1029,46 +1029,44 @@ jQuery(function ($) {
     }
 })
 
-/*----------------------------------------------
-12. Cookie Notice
-----------------------------------------------*/
+$(document).ready(function() {
+    var closeHeight = '10em'; /* Default "closed" height */
+    var moreText 	= 'Ler mais'; /* Default "Read More" text */
+    var lessText	= 'Ler menos'; /* Default "Read Less" text */
+    var duration	= '1000'; /* Animation duration */
+    var easing = 'linear'; /* Animation easing option */
 
-jQuery(function ($) {
+    // Limit height of .entry-content div
+    $('.page-template-page_blog-php #content .entry, .archive #content .entry').each(function() {
 
-    'use strict';
+        // Set data attribute to record original height
+        var current = $(this).children('.entry-content');
+        current.data('fullHeight', current.height()).css('height', closeHeight);
 
-    let cookieNotice = true;
+        // Insert "Read More" link
+        current.after('<a href="javascript:void(0);" class="more-link closed">' + moreText + '</a>');
 
-    if(cookieNotice) {
+    });
 
-        // Translate
-        gdprCookieNoticeLocales.en = {
-            description: 'We use cookies to offer you a better browsing experience, personalise content and ads, to provide social media features and to analyse our traffic. Read about how we use cookies and how you can control them by clicking Cookie Settings. You consent to our cookies if you continue to use this website.',
-            settings: 'Cookie settings',
-            accept: 'Accept cookies',
-            statement: 'Our cookie statement',
-            save: 'Save settings',
-            always_on: 'Always on',
-            cookie_essential_title: 'Essential website cookies',
-            cookie_essential_desc: 'Necessary cookies help make a website usable by enabling basic functions like page navigation and access to secure areas of the website. The website cannot function properly without these cookies.',
-            cookie_performance_title: 'Performance cookies',
-            cookie_performance_desc: 'These cookies are used to enhance the performance and functionality of our websites but are non-essential to their use. For example it stores your preferred language or the region that you are in.',
-            cookie_analytics_title: 'Analytics cookies',
-            cookie_analytics_desc: 'We use analytics cookies to help us measure how users interact with website content, which helps us customize our websites and application for you in order to enhance your experience.',
-            cookie_marketing_title: 'Marketing cookies',
-            cookie_marketing_desc: 'These cookies are used to make advertising messages more relevant to you and your interests. The intention is to display ads that are relevant and engaging for the individual user and thereby more valuable for publishers and third party advertisers.'
-        }
-
-        gdprCookieNotice({
-            locale: 'en', // This is the default value
-            timeout: 2000, // Time until the cookie bar appears
-            expiration: 30, // This is the default value, in days
-            domain: window.location.hostname, // If you run the same cookie notice on all subdomains, define the main domain starting with a .
-            implicit: true, // Accept cookies on page scroll automatically
-            statement: 'https://leverage.codings.dev', // Link to your cookie statement page
-            performance: ['JSESSIONID'], // Cookies in the performance category.
-            analytics: ['ga'], // Cookies in the analytics category.
-            marketing: ['SSID'] // Cookies in the marketing category.
-        })
+    // Link functinoality
+    var openSlider = function() {
+        link = $(this);
+        var openHeight = link.prev('.entry-content').data('fullHeight') + 'px';
+        link.prev('.entry-content').animate({'height': openHeight}, {duration: duration }, easing);
+        link.text(lessText).addClass('open').removeClass('closed');
+        link.unbind('click', openSlider);
+        link.bind('click', closeSlider);
     }
-})
+
+    var closeSlider = function() {
+        link = $(this);
+        link.prev('.entry-content').animate({'height': closeHeight}, {duration: duration }, easing);
+        link.text(moreText).addClass('closed').removeClass('open');
+        link.unbind('click');
+        link.bind('click', openSlider);
+    }
+
+    // Attach link click functionality
+    $('.more-link').bind('click', openSlider);
+
+});

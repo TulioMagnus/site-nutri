@@ -297,7 +297,7 @@ a:active:not(.btn) {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: var(--primary-color);
+    color: var(--primary-b-color);
     text-decoration: none;
 }
 
@@ -1189,6 +1189,14 @@ aside {
     justify-content: center;
 }
 
+.list-group .list-group-item .fa {
+    color: var(--primary-color);
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .highlights .items .item {
     margin-bottom: 1.5rem;
 }
@@ -1202,6 +1210,15 @@ aside {
 }
 
 .highlights .items .item .icon {
+    background-image: -webkit-linear-gradient(45deg, var(--secondary-color) 15%, var(--primary-color) 65%);
+    background-image: linear-gradient(45deg, var(--secondary-color) 15%, var(--primary-color) 65%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.highlights .items .item .fa {
     background-image: -webkit-linear-gradient(45deg, var(--secondary-color) 15%, var(--primary-color) 65%);
     background-image: linear-gradient(45deg, var(--secondary-color) 15%, var(--primary-color) 65%);
     -webkit-background-clip: text;
@@ -1291,6 +1308,16 @@ aside {
     -webkit-text-fill-color: transparent;
 }
 
+.plans .items .item .fa {
+    font-size: 44px;
+    background-image: -webkit-linear-gradient(45deg, var(--secondary-color) 15%, var(--primary-color) 65%);
+    background-image: linear-gradient(45deg, var(--secondary-color) 15%, var(--primary-color) 65%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .plans .items .item .btn {
     margin-top: 25px;
 }
@@ -1319,7 +1346,8 @@ aside {
 }
 
 .odd .price {
-    border-color: var(--secondary-l-color);
+    border-color:#a9a9a99e;
+
 }
 
 .price i {
@@ -2335,7 +2363,8 @@ header .navbar-expand .navbar-brand img {
 .full-slider .slide-content .right .description,
 .no-slider .slide-content .right .description {
     max-width: 500px;
-    margin-bottom: 2rem;
+    margin-bottom: .5rem;
+    margin-top: .5rem;
     font-size: 1.2rem;
 }
 
@@ -2361,8 +2390,25 @@ header .navbar-expand .navbar-brand img {
     font-size: 1.5rem;
 }
 
+.primary-button, .primary-button:visited, .primary-button:active {
+    position: relative;
+    z-index: 2;
+    min-width: 250px;
+    padding: 10px 25px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    color: var(--primary-b-color);
+    font-weight: 400;
+}
+
 .full-slider .swiper-button-next {
     right: 1.5rem;
+}
+
+.full-slider .slide-content .left .description, .no-slider .slide-content .left .description, .full-slider .slide-content .right .description, .no-slider .slide-content .right .description {
+    max-width: 500px;
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
 }
 
 .full-slider .swiper-button-prev {
@@ -2697,6 +2743,7 @@ header .navbar-expand .navbar-brand img {
     transition-property: opacity, transform;
 }
 
+
 .card {
     position: relative;
     z-index: 1;
@@ -2717,9 +2764,29 @@ header .navbar-expand .navbar-brand img {
     box-shadow: none;
 }
 
-.odd:not(.custom) .card:not(.no-hover):not(:hover) {
-    background-color: var(--card-bg-color);
+.card .testing p {
+    color: red
 }
+
+.card.pricing-1 {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-height: 450px;
+    padding: 30px;
+    border: none;
+    border-radius: 2px;
+    background-color:var(--card-bg-color);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+    transition-timing-function: cubic-bezier(.25, .25, .75, .75);
+    transition-duration: 0.4s;
+    transition-property: opacity, transform;
+}
+
+/* .odd:not(.custom) .card:not(.no-hover):not(:hover) { */
+/*     background-color: var(--card-bg-color); */
+/* } */
 
 .card-white .card {
     background-color: var(--white-color);
@@ -3033,6 +3100,27 @@ header .navbar-expand .navbar-brand img {
     width: 100%;
     max-width: 100px;
     border-radius: 100%;
+}
+
+.special-icon {
+    margin: auto;
+    max-width: 78px;
+    max-height: 78px;
+    vertical-align: middle;
+}
+
+.special-icon2 {
+    margin: auto;
+    max-width: 70px;
+    max-height: 70px;
+    vertical-align: middle;
+}
+
+.special-icon3 {
+    margin: auto;
+    max-width: 60px;
+    max-height: 60px;
+    vertical-align: middle;
 }
 
 .square-image {
@@ -3677,6 +3765,16 @@ form[data-steps="4"] .progressbar li {
 
 /* #region List */
 
+.pricing-1-list-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 10px;
+    min-height: 440px;
+}
+
 .list-group-item {
     margin: 0;
     background: none;
@@ -3688,8 +3786,7 @@ form[data-steps="4"] .progressbar li {
 
 .odd .list-group-item,
 .body-mode-dark .list-group-item {
-    border-color: var(--secondary-l-color);
-    ;
+    border-color:#a9a9a99e;
 }
 
 .list-group-item a:hover {
@@ -4081,6 +4178,7 @@ footer .copyright a:not(.btn) {
     font-weight: 600;
     display: flex;
     align-items: center;
+    color: var(--primary-color);
     justify-content: center;
     border-radius: 100%;
     font-size: 22px;
@@ -4585,5 +4683,74 @@ footer .copyright a:not(.btn) {
     /* #endregion General */
 }
 
+.archive {
+  max-width: 400px;
+  margin: 0 auto;
+}
 
-/* #endregion All Media Queries */
+.entry {
+  position: relative;
+  overflow: hidden;
+  margin: 30px 0;
+  padding: 20px 20px 4em 20px;
+  background: #FFF;
+  font-family: "Open Sans", sans-serif;
+  box-shadow: 0 0 15px #999;
+  min-height: 25em
+}
+
+.entry-title,
+.entry-title a {
+  margin-top: 0;
+  font-family: Oswald, sans-serif;
+  color: #333;
+  text-decoration: none;
+}
+
+.entry-title a:hover {
+  color: #555;
+}
+
+fa {
+    width: auto;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 44px;
+    display: block;
+    margin: auto;
+}
+
+.more-link {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background: var(--primary-color);
+  color: #FFF;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 10px #000;
+}
+
+.more-link a {
+    color: white
+}
+
+.more-link:hover {
+  background: var(--primary-color);
+}
+
+.more-link:after {
+	content: "\2193";
+	margin-left: 8px;
+	font-size: .8em;
+}
+
+.more-link.open:after {
+	content: "\2191";
+}
