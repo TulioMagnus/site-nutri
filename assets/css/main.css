@@ -400,7 +400,18 @@ h2.super {
     font-weight: var(--h1-weight);
     line-height: 1.2;
     font-family: var(--h1-font);
-    color: var(--primary-color);
+    color: var(--secondary-color);
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+h2.super2 {
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    font-weight: var(--h1-weight);
+    line-height: 1.2;
+    font-family: var(--h1-font);
+    color: var(--secondary-color);
     -ms-word-wrap: break-word;
     word-wrap: break-word;
 }
