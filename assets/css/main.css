@@ -4866,12 +4866,12 @@ fa {
     color: white;
   }
   .span-text {
-    font-size: 18px;
+    font-size: 1vw;
     color: white;
   }
 }
 
-@media screen and (max-width: 1400px) and (min-width: 991px) {
+@media screen and (max-width: 1700px) and (min-width: 991px) {
     .button1 {
         padding-right: 150px;
       }
