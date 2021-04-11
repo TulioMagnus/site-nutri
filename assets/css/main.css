@@ -2923,8 +2923,8 @@ header .navbar-expand .navbar-brand img {
 
 .card:not(.no-hover):hover a,
 .card.sticky:not(.no-hover) a {
-    color: #040402;
-    -webkit-text-fill-color: #040402;
+    color: #f5f5f5;
+    -webkit-text-fill-color: #f5f5f5;
 }
 
 .card:not(.no-hover):hover i,
