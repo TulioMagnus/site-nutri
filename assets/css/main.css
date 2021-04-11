@@ -2933,6 +2933,11 @@ header .navbar-expand .navbar-brand img {
     -webkit-text-fill-color: #f5f5f5;
 }
 
+.card:not(.no-hover):hover img,
+.card.sticky:not(.no-hover) img {
+    filter: brightness(0) invert(1);
+}
+
 .card:not(.no-hover):hover .icon,
 .card.sticky:not(.no-hover) .icon {
     background-color: transparent;
