@@ -445,7 +445,7 @@ h4 {
 
 .odd h4,
 .body-mode-dark h4 {
-    color: var(--dark-grey-color);
+    color: var(--secondary-color);
 }
 
 h5 {
@@ -4759,7 +4759,7 @@ fa {
   display: block;
   width: 100%;
   padding: 8px;
-  background: var(--primary-color);
+  background: var(--secondary-color);
   color: #FFF;
   text-align: center;
   text-transform: uppercase;
